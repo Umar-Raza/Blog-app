@@ -1,10 +1,13 @@
-# Blog web app using React + Vite
+# Blog App
 
-# Dependencies
+## This Develop using React + Vite and firebase
+
+## Dependencies
  - firebase
  - react-hot-toast
  - react-icons
  - react-router-dom
+ - Tailwinds
 
 
 ## Installation
