@@ -94,7 +94,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
                             </>
                         )
                     })}
-                    <p className="text-gray-500 dark:text-gray-400 text-md" style={{ color: mode === 'dark' ? 'white' : 'black' }}>↳Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius nesciunt magni nam maxime perspiciatis velit recusandae molestias eaque, commodi modi, consequatur quos fuga ut ipsam natus aut possimus illum corrupti.</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-md" style={{ color: mode === 'dark' ? 'white' : 'black' }}></p>
                 </article>
             </div>
         </section>

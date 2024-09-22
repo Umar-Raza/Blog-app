@@ -9,11 +9,12 @@ import {
 } from "@material-tailwind/react";
 
 import myContext from '../../../context/data/myContext'
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+
 import { auth } from '../../../config/Firebase';
 import { useEffect } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
 
@@ -21,8 +22,8 @@ export const AdminLogin = () => {
     const context = useContext(myContext);
     const { mode } = context;
     const navigate = useNavigate()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const login = async () => {
         if (!email || !password) {
@@ -31,7 +32,7 @@ export const AdminLogin = () => {
         try {
             const result = await signInWithEmailAndPassword(auth, email, password)
             toast.success("Logedin successfuly!")
-            localStorage.setItem("admin", JSON.stringify(result))
+            localStorage.setItem('admin', JSON.stringify(result));
             navigate('/dashboard')
         } catch (error) {
             toast.error("Something went wrong!")

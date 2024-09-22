@@ -135,7 +135,7 @@ export const Dashboard = () => {
                                         < tbody key={index} >
                                             <tr className=" border-b-2" style={{ background: mode === 'dark' ? 'rgb(30, 41, 59)' : 'white' }}>
                                                 {/* S.No   */}
-                                                <td style={{ color: mode === 'dark' ? 'white' : 'black' }} className="px-6 py-4">
+                                                <td style={{ color: mode === 'dark' ? 'white' : 'black' }} className="px-6 py-4 font-bold">
                                                     {index + 1}
                                                 </td>
                                                 {/* Blog Thumbnail  */}

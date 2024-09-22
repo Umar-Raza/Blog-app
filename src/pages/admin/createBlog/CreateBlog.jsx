@@ -27,7 +27,7 @@ export const CreateBlog = () => {
     const [thumbnail, setThumbnail] = useState();
 
     const [text, settext] = useState('');
-    
+
     const addPost = async () => {
         if (blogs.title === "" || blogs.category === "" || blogs.content === "" || blogs.thumbnail === "") {
             return toast.error("All fields are Required!")
@@ -72,7 +72,10 @@ export const CreateBlog = () => {
     }
     useEffect(() => {
         window.scrollTo(0, 0)
- }, [])
+    }, [])
+
+
+
     return (
         <div className=' container mx-auto max-w-5xl py-6'>
             <div className="p-5" style={{
@@ -167,13 +170,14 @@ export const CreateBlog = () => {
                                 : 'rgb(226, 232, 240)'
                         }}
                         name="category"
-                        onChange={(e) => setBlogs({ ...blogs, category: e.target.value })} 
-                        value={blogs.category} 
+                        onChange={(e) => setBlogs({ ...blogs, category: e.target.value })}
+                        value={blogs.category}
                     />
                 </div>
                 {/* Four Editor  */}
                 <Editor
-                    apiKey='1gq16llbveklojyy8z4fvl396hxzf145w6ge0zgzmx8zzqtz'
+                    apiKey={import.meta.env.VITE_EDIDOR_APIKEY}
+                    // apiKey={import.meta.env.REACT_APP_EMAIL_editorApkFile}
                     onEditorChange={(newValue, editor) => {
                         setBlogs({ ...blogs, content: newValue });
                         settext(editor.getContent({ format: 'text' }));
